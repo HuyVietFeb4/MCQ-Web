@@ -12,7 +12,7 @@
         require_once "./Components/header.php";
         $base_url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname(dirname($_SERVER['PHP_SELF'])), '/\\');
         if(!isset($_SESSION['User_ID']) || $_SESSION['is_admin'] != TRUE) {
-            header("Location: $base_url/pages/index.php?page=sign_in");
+            header("Location: index.php?page=sign_in");
             exit;
         }
     ?>
@@ -20,7 +20,7 @@
     <h1 id="question-management">Questions Management</h1>
 
     <?php
-        require_once "./Components/search_questions.php";
+        require_once "./pages/Components/search_questions.php";
 
      
     // Display error
@@ -28,6 +28,7 @@
         //     echo "<div class='alert alert-danger' role='alert'><p>" . $_SESSION['error_message'] . "</p></div>";
         //     unset($_SESSION['error_message']); // Clear the message after displaying it
         // }
+
         if (isset($_SESSION['success_message'])) {
             echo "<div class='success'><p>" . $_SESSION['success_message'] . "</p></div>";
             unset($_SESSION['success_message']); // Clear the message after displaying it
@@ -49,8 +50,8 @@
         // if(!isset($_SESSION["sort_category"])) {
         //     $_SESSION["sort_category"] = '_';
         // }
-        require_once "../logical/database_connect.php";
-        require_once "../logical/function.php";
+        require_once "./logical/database_connect.php";
+        require_once "./logical/function.php";
 
         $_SESSION["page_number"] = isset($_GET["page_number"]) ? (int)$_GET["page_number"] :  1;
         if($_SESSION["page_number"] <= 0) {
@@ -179,7 +180,7 @@
     <!-- <script type="module" src="../js/Page/question_management.js"></script> -->
 
     <?php
-        require_once ("./Components/add_section.php");
+        require_once ("./pages/Components/add_section.php");
     ?>
     
     <?php

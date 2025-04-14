@@ -19,8 +19,8 @@
             header("Location: $base_url/pages/index.php?page=you_have_been_banned");
             exit;
         }
-        require_once "../logical/database_connect.php";
-        require_once "../logical/function.php";
+        require_once "./logical/database_connect.php";
+        require_once "./logical/function.php";
     ?>
 
     <!-- Search bar -->

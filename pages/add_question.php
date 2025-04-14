@@ -94,7 +94,7 @@
         <?php 
         // Display error
             if (isset($_SESSION['error_message'])) {
-                echo "<div class='alert alert-danger' role='alert'>" . $_SESSION['error_message'] . "</div>";
+                echo "<div class='alert alert-danger' role='alert'><p>" . $_SESSION['error_message'] . "</p></div>";
                 unset($_SESSION['error_message']); // Clear the message after displaying it
             }
             if (isset($_SESSION['success_message'])) {

@@ -16,7 +16,7 @@
         $question_id = sanitize_input($_GET['question_id']);
         if(filter_var($question_id, FILTER_VALIDATE_INT) == FALSE || (int) $question_id < 0) {
             $_SESSION['error_message'] = 'Invalid input. Try again';
-            header("Location: $base_url/pages/index.php?page=question_management");
+            header("Location: index.php?page=question_management");
             exit;
         }
 

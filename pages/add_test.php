@@ -10,7 +10,7 @@
     $info = $_SESSION['info'];
     $base_url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname(dirname($_SERVER['PHP_SELF'])), '/\\');
     if(!isset($_SESSION['User_ID'])) {
-        header("Location: $base_url/pages/index.php?page=sign_in");
+        header("index.php?page=sign_in");
     }
 ?>
 

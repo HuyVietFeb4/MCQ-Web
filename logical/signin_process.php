@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['is_admin'] = FALSE;
                     $_SESSION['Student_status'] = $student['Student_status'];
                     if($student['Student_status'] == 'banned') {
-                        header("Location: $base_url/pages/index.php?page=you_have_been_banned");
+                        header("Location: ../index.php?page=you_have_been_banned");
                         exit;
                     }
                 }
@@ -66,18 +66,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['is_admin'] = TRUE;
                 }
                 $connection->close();
-                header("Location: $base_url/pages/index.php?page=landing_page");
+                header("Location: ../index.php?page=landing_page");
             }
             else {
                 $_SESSION['error_message'] = "Invalid passwords or email, try again.";
                 $connection->close();
-                header("Location: $base_url/pages/index.php?page=sign_in");
+                header("Location: ../index.php?page=sign_in");
             }
         }
         else {
                 $_SESSION['error_message'] = "Email has not been registered.";
                 $connection->close();
-                header("Location: $base_url/pages/index.php?page=sign_in");
+                header("Location: ../index.php?page=sign_in");
         }
     }
 }

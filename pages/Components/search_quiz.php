@@ -12,8 +12,8 @@ if(!isset($_SESSION["sort_order"])) {
 if(!isset($_SESSION["sort_by"])) {
     $_SESSION["sort_by"] = '_';
 }
-require_once "../logical/database_connect.php";
-require_once "../logical/function.php";
+require_once "./logical/database_connect.php";
+require_once "./logical/function.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

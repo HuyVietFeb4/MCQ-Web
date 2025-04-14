@@ -20,8 +20,8 @@
             exit;
         }
 
-        require_once "../logical/database_connect.php";
-        require_once "../logical/function.php";
+        require_once "./logical/database_connect.php";
+        require_once "./logical/function.php";
 
         $Test_ID = sanitize_input($_GET['quiz_id']);
         if (filter_var($Test_ID, FILTER_VALIDATE_INT) !== false && (int) $Test_ID > 0) {

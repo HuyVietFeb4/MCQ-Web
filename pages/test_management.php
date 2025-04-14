@@ -12,7 +12,7 @@
         require_once ("./Components/header.php");
         $base_url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname(dirname($_SERVER['PHP_SELF'])), '/\\');
         if(!isset($_SESSION['User_ID']) || $_SESSION['is_admin'] != TRUE) {
-            header("Location: $base_url/pages/index.php?page=sign_in");
+            header("Location: index.php?page=sign_in");
             exit;
         }
     ?>
@@ -20,7 +20,7 @@
     <h1 id="test-management">Test Management</h1>
 
     <?php
-        require_once ("./Components/search.php");
+        require_once ("./pages/Components/search.php");
         $_SESSION["page_number"] = isset($_GET["page_number"]) ? (int)$_GET["page_number"] :  1;
         if($_SESSION["page_number"] <= 0) {
             $_SESSION["page_number"] = 1;
@@ -112,7 +112,7 @@
         <?php pagination($total_pages, $num_adjacents_page); ?>
     </div>
     <?php
-        require_once ("./Components/add_section.php");
+        require_once ("./pages/Components/add_section.php");
     ?>
 
     <!-- <script src="../js/Page/category.js"></script>
