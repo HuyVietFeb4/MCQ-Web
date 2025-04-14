@@ -10,8 +10,8 @@
 <body>
     <?php
         require_once "./pages/Components/header.php";
-        require_once "../logical/database_connect.php";
-        require_once "../logical/function.php";
+        require_once "./logical/database_connect.php";
+        require_once "./logical/function.php";
     ?>
 
     <h1 id="question-title">Add Question</h1>
@@ -94,7 +94,7 @@
         <?php 
         // Display error
             if (isset($_SESSION['error_message'])) {
-                echo "<div class='alert alert-danger' role='alert'>" . $_SESSION['error_message'] . "</div>";
+                echo "<div class='alert alert-danger' role='alert'><p>" . $_SESSION['error_message'] . "</p></div>";
                 unset($_SESSION['error_message']); // Clear the message after displaying it
             }
             if (isset($_SESSION['success_message'])) {

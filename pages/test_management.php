@@ -12,7 +12,7 @@
         require_once ("./pages/Components/header.php");
         $base_url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname(dirname($_SERVER['PHP_SELF'])), '/\\');
         if(!isset($_SESSION['User_ID']) || $_SESSION['is_admin'] != TRUE) {
-            header("Location: $base_url/pages/index.php?page=sign_in");
+            header("Location: index.php?page=sign_in");
             exit;
         }
     ?>
@@ -20,7 +20,7 @@
     <h1 id="test-management">Test Management</h1>
 
     <?php
-        require_once ("./Components/search.php");
+        require_once ("./pages/Components/search.php");
         $_SESSION["page_number"] = isset($_GET["page_number"]) ? (int)$_GET["page_number"] :  1;
         if($_SESSION["page_number"] <= 0) {
             $_SESSION["page_number"] = 1;
@@ -86,7 +86,7 @@
             <?php 
                 if ($current_page_result->num_rows > 0) { 
                     while($test = $current_page_result->fetch_assoc()) { 
-                        echo '<a class="category" href="index.php?page=edit_test">';
+                        echo '<div class="category">';
                             echo '<div class="quiz-information">';
                                 echo '<h3>' . $test['Test_name'] . '</h3>';
                                 echo '<div class="quiz-info">';
@@ -95,7 +95,7 @@
                                     echo '<p>Time limits: ' . $test['Time_allowed'] . ' minutes</p>';
                                 echo '</div>';
                             echo '</div>';
-                        echo '</a>';
+                        echo '</div>';
                     }
                 } else {
                     echo '<p>Nothing to display!</p>';
@@ -112,11 +112,11 @@
         <?php pagination($total_pages, $num_adjacents_page); ?>
     </div>
     <?php
-        require_once ("./Components/add_section.php");
+        require_once ("./pages/Components/add_section.php");
     ?>
 
-    <script src="../js/Page/category.js"></script>
-    <script src="../js/Page/explore.js"></script>
+    <!-- <script src="../js/Page/category.js"></script>
+    <script src="../js/Page/explore.js"></script> -->
 
     <?php
         require_once ("./pages/Components/footer.php");

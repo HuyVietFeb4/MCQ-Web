@@ -12,7 +12,7 @@
         require_once "./pages/Components/header.php";
         $base_url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname(dirname($_SERVER['PHP_SELF'])), '/\\');
         if(!isset($_SESSION['User_ID']) || $_SESSION['is_admin'] != TRUE) {
-            header("Location: $base_url/pages/index.php?page=sign_in");
+            header("Location: index.php?page=sign_in");
             exit;
         }
     ?>
@@ -20,12 +20,12 @@
     <h1 id="question-management">Questions Management</h1>
 
     <?php
-        require_once "./Components/search_questions.php";
+        require_once "./pages/Components/search_questions.php";
 
      
     // Display error
         if (isset($_SESSION['error_message'])) {
-            echo "<div class='alert alert-danger' role='alert'>" . $_SESSION['error_message'] . "</div>";
+            echo "<div class='alert alert-danger' role='alert'><p>" . $_SESSION['error_message'] . "</p></div>";
             unset($_SESSION['error_message']); // Clear the message after displaying it
         }
         if (isset($_SESSION['success_message'])) {
@@ -49,8 +49,8 @@
         // if(!isset($_SESSION["sort_category"])) {
         //     $_SESSION["sort_category"] = '_';
         // }
-        require_once "../logical/database_connect.php";
-        require_once "../logical/function.php";
+        require_once "./logical/database_connect.php";
+        require_once "./logical/function.php";
 
         $_SESSION["page_number"] = isset($_GET["page_number"]) ? (int)$_GET["page_number"] :  1;
         if($_SESSION["page_number"] <= 0) {
@@ -148,7 +148,7 @@
                     echo '<div class="modify-section">';
                         echo '<a href="index.php?page=question_edit&question_id=' . $question['Question_ID'] . '">Edit</a>';
                         echo '<form method="POST" action="../logical/delete_questions.php" enctype="multipart/form-data">';
-                            echo '<button id="delete-question" type="submit" value="' . $question['Question_ID'] . '" name="DELETE_ID">DELETE</button>';
+                            echo '<button class="delete-question" type="submit" value="' . $question['Question_ID'] . '" name="DELETE_ID">DELETE</button>';
                         echo '</form>';
                     echo '</div>';
                 echo '</div>';
@@ -175,7 +175,7 @@
     <!-- <script type="module" src="../js/Page/question_management.js"></script> -->
 
     <?php
-        require_once ("./Components/add_section.php");
+        require_once ("./pages/Components/add_section.php");
     ?>
     
     <?php

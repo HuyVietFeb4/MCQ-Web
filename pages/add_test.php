@@ -10,7 +10,7 @@
     $info = $_SESSION['info'];
     $base_url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname(dirname($_SERVER['PHP_SELF'])), '/\\');
     if(!isset($_SESSION['User_ID'])) {
-        header("Location: $base_url/pages/index.php?page=sign_in");
+        header("index.php?page=sign_in");
     }
 ?>
 
@@ -28,8 +28,8 @@
 <body>
     <?php
         require_once "./pages/Components/header.php";
-        require_once "../logical/database_connect.php";
-        require_once "../logical/function.php";
+        require_once "./logical/database_connect.php";
+        require_once "./logical/function.php";
     ?>
 
     <section id="add-test-instruction">
@@ -39,7 +39,7 @@
 
     <?php 
     if (isset($_SESSION['error_message'])) {
-        echo "<div class='alert alert-danger' role='alert'>" . $_SESSION['error_message'] . "</div>";
+        echo "<div class='alert alert-danger' role='alert'><p>" . $_SESSION['error_message'] . "</p></div>";
         unset($_SESSION['error_message']); // Clear the message after displaying it
     }
     if (isset($_SESSION['success_message'])) {

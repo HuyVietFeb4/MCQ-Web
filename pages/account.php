@@ -7,11 +7,11 @@
     $base_url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname(dirname($_SERVER['PHP_SELF'])), '/\\');
     $display = isset($_GET['account_display']) && in_array($_GET['account_display'], array('profile', 'history', 'reset_password')) ? $_GET['account_display'] : 'profile';
     if(!isset($_SESSION['User_ID'])) {
-        header("Location: $base_url/pages/index.php?page=sign_in");
+        header("Location: index.php?page=sign_in");
     }
     $base_url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname(dirname($_SERVER['PHP_SELF'])), '/\\');
     if(isset($_SESSION['Student_status']) && $_SESSION['Student_status'] == 'banned') {
-        header("Location: $base_url/pages/index.php?page=you_have_been_banned");
+        header("Location: index.php?page=you_have_been_banned");
         exit;
     }
 ?>

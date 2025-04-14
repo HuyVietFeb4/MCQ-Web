@@ -1,17 +1,13 @@
 @import url("../Component/alert.css");
 @import url("../Component/success.css");
 
-body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+body, html {
     font-family: "Outfit", sans-serif;
-}
-
-html {
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 #banner {
@@ -208,4 +204,230 @@ html {
 .view-button a:hover {
     background-color: rgb(143, 232, 232);
 }
+
+@media screen and (max-width: 768px) {
+    #banner {
+        flex-direction: column;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    #left-banner, #right-banner {
+        width: 100%;
+        margin: 0;
+    }
+
+    #left-banner h1 {
+        font-size: 40px;
+        margin-left: 0;
+    }
+
+    #left-banner p {
+        font-size: 20px;
+        margin-left: 0;
+    }
+
+    #right-banner img {
+        width: 100%;
+        height: auto;
+        margin: 20px 0 0 0;
+    }
+
+    .inside {
+        flex-direction: column;
+        margin: 30px 0;
+    }
+
+    .left-content, .right-content {
+        width: 100%;
+        margin: 0;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .left-content h1, .right-content h1,
+    .left-content p, .right-content p {
+        margin-left: 0;
+        padding: 0 10px;
+    }
+
+    .left-content img,
+    .right-content img {
+        width: 90%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .left-content a, .right-content a {
+        margin: 20px auto;
+        display: inline-block;
+    }
+
+    #quizzes {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .quiz {
+        width: 90%;
+    }
+
+    .view-button {
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    #banner {
+        flex-direction: column;
+        padding: 40px 30px;
+        text-align: center;
+    }
+
+    #left-banner, #right-banner {
+        width: 100%;
+    }
+
+    #left-banner h1 {
+        font-size: 55px;
+        margin-left: 0;
+    }
+
+    #left-banner p {
+        font-size: 24px;
+        margin-left: 0;
+    }
+
+    #right-banner img {
+        width: 90%;
+        height: auto;
+        margin: 30px auto 0 auto;
+    }
+
+    .inside {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .left-content, .right-content {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .left-content h1, .right-content h1,
+    .left-content p, .right-content p {
+        margin-left: 0;
+        padding: 0 20px;
+    }
+
+    .left-content img,
+    .right-content img {
+        width: 90%;
+        height: auto;
+        margin: 30px auto;
+    }
+
+    .left-content a,
+    .right-content a {
+        display: inline-block;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    #quizzes {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .quiz {
+        width: 40%;
+    }
+
+    .view-button {
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-height: 650px) {
+    #banner {
+        padding: 20px;
+    }
+
+    #left-banner h1 {
+        font-size: 50px;
+        margin-left: 5%;
+    }
+
+    #left-banner p {
+        font-size: 22px;
+        margin-left: 5%;
+    }
+
+    #right-banner img {
+        width: 90%;
+        height: auto;
+        margin-left: 5%;
+        margin-top: 0;
+    }
+
+    .inside {
+        margin-top: 10px;
+        flex-direction: row;
+    }
+
+    .left-content,
+    .right-content {
+        font-size: 20px;
+    }
+
+    .left-content p,
+    .right-content p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .left-content h1,
+    .right-content h1 {
+        font-size: 26px;
+        margin-left: 5%;
+    }
+
+    .left-content img,
+    .right-content img {
+        width: 90%;
+        height: auto;
+        margin-top: 10px;
+        margin-left: 5%;
+    }
+
+    .left-content a,
+    .right-content a {
+        margin-left: 5%;
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+
+    #quizzes {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .quiz {
+        width: 20%;
+    }
+
+    .view-button a {
+        font-size: 14px;
+        padding: 6px 16px;
+    }
+}
+
 

@@ -11,12 +11,12 @@
     <?php 
         $base_url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname(dirname($_SERVER['PHP_SELF'])), '/\\');
         require_once "./pages/Components/header.php";
-        require_once "../logical/database_connect.php";
-        require_once "../logical/function.php";
+        require_once "./logical/database_connect.php";
+        require_once "./logical/function.php";
         $question_id = sanitize_input($_GET['question_id']);
         if(filter_var($question_id, FILTER_VALIDATE_INT) == FALSE || (int) $question_id < 0) {
             $_SESSION['error_message'] = 'Invalid input. Try again';
-            header("Location: $base_url/pages/index.php?page=question_management");
+            header("Location: index.php?page=question_management");
             exit;
         }
 

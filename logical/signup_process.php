@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows > 0) { 
             $_SESSION['error_message'] = "Email is already registered. Please use another email or sign in.";
             $connection->close();
-            header("Location: $base_url/pages/index.php?page=sign_up");
+            header("Location: ../index.php?page=sign_up");
         }
         else {
             $salt1 = "%$32*^";
@@ -31,12 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             add_student($connection, $email, $username, $token);
             $_SESSION['success_message'] = "Sign up successfully.";
             $connection->close();
-            header("Location: $base_url/pages/index.php?page=sign_in");
+            header("Location: ../index.php?page=sign_in");
         }
     }
     else {
         $_SESSION['error_message'] = "Invalid input. Please fill out all fields correctly.";
         $connection->close();
-        header("Location: $base_url/pages/index.php?page=sign_up");
+        header("Location: ../index.php?page=sign_up");
     }
 }
