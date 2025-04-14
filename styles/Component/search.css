@@ -55,3 +55,39 @@ select {
     background-color: rgb(78, 78, 243);
     font-weight: bold;
 }
+
+@media screen and (max-width: 380px) {
+    #search-bar {
+        width: 80%; 
+        margin: auto;
+        margin-top: 20px; 
+    }
+
+    #search-bar input {
+        height: 35px; /* Make input field taller for better usability */
+        font-size: 14px; /* Smaller font size */
+    }
+
+    #sort-section {
+        flex-direction: column; /* Stack sort section vertically */
+        gap: 15px; /* Increase gap between sections */
+    }
+
+    .sort-area {
+        width: 80%;
+        margin: auto;
+    }
+
+    select {
+        font-size: 14px; /* Adjust font size */
+        width: 80%; /* Ensure select takes full width */
+        height: fit-content;
+        margin: auto;
+    }
+
+    #confirm_sort {
+        font-size: 14px; /* Adjust button font size */
+        width: 80%; /* Ensure the button takes full width */
+        margin: auto;
+    }
+}

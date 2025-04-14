@@ -13,7 +13,7 @@
         { 
             session_start(); 
         } 
-        require_once "./Components/header.php";
+        require_once "./pages/Components/header.php";
         $category = isset($_GET["category"]) ? $_GET["category"] : ''; 
         require_once "./pages/Components/search_quiz.php";
         $base_url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname(dirname($_SERVER['PHP_SELF'])), '/\\');
@@ -113,7 +113,7 @@
     <?php
         require_once "./pages/Components/footer.php";
     ?>
-    <script src="../js/Page/category.js"></script>
-    <script src="../js/Page/explore.js"></script>
+    <!-- <script src="../js/Page/category.js"></script>
+    <script src="../js/Page/explore.js"></script> -->
 </body>
 </html>

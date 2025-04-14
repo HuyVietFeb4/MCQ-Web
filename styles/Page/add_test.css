@@ -1,6 +1,8 @@
 @import url("add_question.css");
 @import url("../Component/pagination.css");
 @import url("../Component/search.css");
+@import url("../Component/alert.css");
+@import url("../Component/success.css");
 
 body, html {
     font-family: "Outfit", sans-serif;

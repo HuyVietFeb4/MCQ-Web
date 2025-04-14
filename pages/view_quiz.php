@@ -10,11 +10,11 @@
 <body>
     <?php 
     require_once "./pages/Components/header.php";
-    require_once "../logical/database_connect.php";
-    require_once "../logical/function.php";
+    require_once "./logical/database_connect.php";
+    require_once "./logical/function.php";
     $base_url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname(dirname($_SERVER['PHP_SELF'])), '/\\');
     if(isset($_SESSION['Student_status']) && $_SESSION['Student_status'] == 'banned') {
-        header("Location: $base_url/pages/index.php?page=you_have_been_banned");
+        header("Location: index.php?page=you_have_been_banned");
         exit;
     }
     $Test_ID = sanitize_input($_GET['quiz_id']);
@@ -23,7 +23,7 @@
         
     }
     else {
-        header("Location: $base_url/pages/index.php?page=landing_page");
+        header("Location: index.php?page=landing_page");
         exit;
     }
     $test_name_query = "SELECT Test_name FROM Test where Test_ID = ?";
@@ -56,7 +56,7 @@
     $tq_stmt->execute();
     $tq_result = $tq_stmt->get_result();
     if ($tq_result->num_rows < 20) {
-        header("Location: $base_url/pages/index.php?page=landing_page");
+        header("Location: index.php?page=landing_page");
         exit;
     }
     function takeRandomFromSet(&$set) {

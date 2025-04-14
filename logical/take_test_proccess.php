@@ -61,4 +61,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Test_ID'])) {
     $update_test_attempt_stmt->bind_param("ii", $score, $test_attempt_id);
     $update_test_attempt_stmt->execute();
 }
-header("Location: $base_url//pages/index.php?page=quiz_detail&quiz_id=$Test_ID");
+header("Location: ../index.php?page=quiz_detail&quiz_id=$Test_ID");

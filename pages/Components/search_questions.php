@@ -15,8 +15,8 @@ if(!isset($_SESSION["sort_by"])) {
 if(!isset($_SESSION["sort_category"])) {
     $_SESSION["sort_category"] = '_';
 }
-require_once "../logical/database_connect.php";
-require_once "../logical/function.php";
+require_once "./logical/database_connect.php";
+require_once "./logical/function.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
